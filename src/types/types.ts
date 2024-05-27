@@ -1,3 +1,5 @@
+
+// PostCode Types
 export type PostCode = {
   status: string;
   match_type: string;
@@ -26,6 +28,7 @@ type PostCodeData = {
   incode: string;
 };
 
+// Crime Types
 export type Crime = {
   category: CrimeDatumCategory;
   location_type: LocationType;
