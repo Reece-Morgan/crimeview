@@ -1,13 +1,14 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Header from "../components/header";
+import CustomLink from "../components/Link";
 
 function MapViewPage() {
   return (
     <Wrapper>
-      <Title>Map View</Title>
+      <Header />
       <Text>Map View is coming soon!</Text>
       <Text>
-        Return to <Link to="/">Home Page</Link>
+        Return to <CustomLink href="/">Home Page</CustomLink>
       </Text>
     </Wrapper>
   );

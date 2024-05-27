@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Crime, CrimeData, PostCode } from "../types/types";
 import styled from "styled-components";
 import CrimeView from "../components/crime-view";
-import { Link } from "react-router-dom";
+import Header from "../components/header";
+import CustomLink from "../components/Link";
 
 function DataViewPage() {
   const [postCode, setPostCode] = useState<PostCode>();
@@ -62,7 +63,7 @@ function DataViewPage() {
 
   return (
     <Wrapper>
-      <Title>Data View</Title>
+      <Header />
       <Note>
         Please note: since only the British Transport Police provide data for
         Scotland, crime levels may appear much lower than they really are.
@@ -70,7 +71,7 @@ function DataViewPage() {
       {/* display message if no data is found */}
       {!crimeData || crimeData.length === 0 ? (
         <>
-          <NoData>No Crime Data found for this area. Try another search <Link to='/'>here</Link>.</NoData>
+          <NoData>No Crime Data found for this area. Try another search <CustomLink href='/'>here</CustomLink>.</NoData>
         </>
       ) : (
         <>
