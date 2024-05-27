@@ -20,9 +20,9 @@ function SearchBar() {
       return;
     }
 
-    // format postcode, store in redux and navigate to data view
+    // store postcode in redux, format it and navigate to data view
+    dispatch(addPostCodetoHistory(data.postcode));
     const postcode = data.postcode.replace(/ /g, "+");
-    dispatch(addPostCodetoHistory(postcode));
     navigate(`/data-view?postcode=${postcode}`);
   });
 
