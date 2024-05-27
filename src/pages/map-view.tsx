@@ -21,6 +21,4 @@ const Wrapper = styled.div`
   margin: 0 auto;
 `;
 
-const Title = styled.h1``;
-
 const Text = styled.p``;

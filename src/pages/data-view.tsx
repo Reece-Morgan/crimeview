@@ -105,8 +105,6 @@ const Wrapper = styled.div`
   margin: 0 auto;
 `;
 
-const Title = styled.h1``;
-
 const Note = styled.p`
   font-size: 12px;
   margin: 0;
