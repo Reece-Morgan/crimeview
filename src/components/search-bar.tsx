@@ -1,12 +1,15 @@
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { addPostCodetoHistory } from "../store/search-history/search-history";
 
 interface FormProps {
   postcode: string;
 }
 
 function SearchBar() {
+  const dispatch = useDispatch();
   const { register, handleSubmit } = useForm<FormProps>();
 
   // use useNavigate hook to push user to data-view poage with postcode query
@@ -17,8 +20,9 @@ function SearchBar() {
       return;
     }
 
-    // format postcode and navigate to data view
+    // format postcode, store in redux and navigate to data view
     const postcode = data.postcode.replace(/ /g, "+");
+    dispatch(addPostCodetoHistory(postcode));
     navigate(`/data-view?postcode=${postcode}`);
   });
 
